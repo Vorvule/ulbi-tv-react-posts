@@ -5,7 +5,7 @@ import But from '../button/But'
 
 const Navbar = () => {
 
-    const { isAuth, setIsAuth } = useContext(AuthContext)
+    const { setIsAuth } = useContext(AuthContext)
 
     const logout = () => {
         setIsAuth(false)

@@ -10,11 +10,11 @@ const PostIdPage = () => {
     const [post, setPost] = useState({})
     const [comments, setComments] = useState([])
 
-    const [fetchPostById, isLoading, error] = useFetch(async (id) => {
+    const [fetchPostById, isLoading] = useFetch(async (id) => {
         const response = await PostService.getById(id)
         setPost(response.data)
     })
-    const [fetchComments, isCommLoading, commError] = useFetch(async (id) => {
+    const [fetchComments, isCommLoading] = useFetch(async (id) => {
         const response = await PostService.getCommentById(id)
         setComments(response.data)
     })
@@ -22,7 +22,7 @@ const PostIdPage = () => {
     useEffect(() => {
         fetchPostById(params.id)
         fetchComments(params.id)
-    }, [])
+    }, [fetchComments, fetchPostById, params.id])
 
     return (
         <div>

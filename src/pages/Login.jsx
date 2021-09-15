@@ -5,7 +5,8 @@ import { AuthContext } from '../context/context'
 
 const Login = () => {
 
-    const { isAuth, setIsAuth } = useContext(AuthContext)
+    const { setIsAuth } = useContext(AuthContext)
+
 
     const login = event => {
         event.preventDefault()

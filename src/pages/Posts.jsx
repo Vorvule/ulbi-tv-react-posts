@@ -38,7 +38,7 @@ function Posts() {
 
     useEffect(() => {
         fetchPosts(limit, page)
-    }, [page, limit])
+    }, [fetchPosts, page, limit])
 
 
     useObserver(lastElement, page < totalPages, isPostLoading, () => {
